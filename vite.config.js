@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/hlcardetail/' : '/',
+  base: '/',
   plugins: [react()],
   server: {
     port: 3000,
@@ -12,10 +12,27 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: true
+    sourcemap: true,
+    // Adiciona estas configurações para garantir que os caminhos dos assets estejam corretos
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom', 'react-router-dom'],
+        },
+      },
+    },
   },
   preview: {
     port: 5000,
-    open: true
+    open: true,
+    // Configuração para o modo preview funcionar corretamente
+    host: true,
+    strictPort: true,
+  },
+  // Configuração para garantir que o Vite sirva o SPA corretamente
+  appType: 'spa',
+  // Configuração para lidar com rotas do React Router
+  define: {
+    'process.env': {}
   }
 })

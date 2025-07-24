@@ -11,7 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy-images": "node scripts/copy-images.js",
     "predev": "npm run copy-images",
-    "prebuild": "npm run copy-images"
+    "prebuild": "npm run copy-images",
+    "vercel-build": "node vercel-build.js"
   },
   "keywords": [],
   "author": "",
