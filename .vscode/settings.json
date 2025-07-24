@@ -1,0 +1,32 @@
+{
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "html": "HTML",
+    "css": "css"
+  },
+  "editor.autoClosingQuotes": "always",
+  "editor.autoClosingBrackets": "always",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.experimental.classRegex": [
+    "class:\s*\"([^\"]*)\"",
+    "class:\s*'([^']*)'",
+    "class:\s*\`([^\`]*)\`",
+    "className:\s*\"([^\"]*)\"",
+    "className:\s*'([^']*)'",
+    "className:\s*\`([^\`]*)\`"
+  ]
+}
