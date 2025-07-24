@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => {
@@ -31,11 +32,11 @@ const Footer = () => {
           <div className="mb-8 lg:mb-0">
             <h3 className="text-xl font-bold text-white mb-4 font-serif">Links Rápidos</h3>
             <ul className="space-y-2">
-              <li><a href="#inicio" className="hover:text-amber-500 transition-colors duration-300">Início</a></li>
-              <li><a href="#servicos" className="hover:text-amber-500 transition-colors duration-300">Serviços</a></li>
-              <li><a href="#galeria" className="hover:text-amber-500 transition-colors duration-300">Galeria</a></li>
-              <li><a href="#sobre" className="hover:text-amber-500 transition-colors duration-300">Sobre Nós</a></li>
-              <li><a href="#contato" className="hover:text-amber-500 transition-colors duration-300">Contato</a></li>
+              <li><Link to="/" className="hover:text-amber-500 transition-colors duration-300">Início</Link></li>
+              <li><Link to="/servicos" className="hover:text-amber-500 transition-colors duration-300">Serviços</Link></li>
+              <li><Link to="/galeria" className="hover:text-amber-500 transition-colors duration-300">Galeria</Link></li>
+              <li><Link to="/#sobre" className="hover:text-amber-500 transition-colors duration-300">Sobre Nós</Link></li>
+              <li><Link to="/contato" className="hover:text-amber-500 transition-colors duration-300">Contato</Link></li>
             </ul>
           </div>
 

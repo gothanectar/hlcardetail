@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const Header = () => {
@@ -37,6 +38,9 @@ const Header = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+  const location = useLocation();
+  const isActive = (path) => location.pathname === path;
+
   return (
     <header 
       className={`fixed w-full bg-opacity-90 bg-gray-900 backdrop-blur-sm z-50 transition-all duration-300 ${
@@ -44,7 +48,7 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center py-4">
-        <div className="flex items-center">
+        <Link to="/" className="flex items-center">
           <div className="h-12 flex items-center">
             <img 
               src="/CAR-hl-DETAIL.png" 
@@ -57,33 +61,33 @@ const Header = () => {
               }}
             />
           </div>
-        </div>
+        </Link>
         
         <nav className="hidden md:flex space-x-8">
-          <a 
-            href="#inicio" 
-            className="text-white hover:text-amber-500 transition-colors duration-300 font-medium"
+          <Link 
+            to="/" 
+            className={`${isActive('/') ? 'text-amber-500' : 'text-white hover:text-amber-500'} transition-colors duration-300 font-medium`}
           >
             Início
-          </a>
-          <a 
-            href="#servicos" 
-            className="text-white hover:text-amber-500 transition-colors duration-300 font-medium"
+          </Link>
+          <Link 
+            to="/servicos" 
+            className={`${isActive('/servicos') ? 'text-amber-500' : 'text-white hover:text-amber-500'} transition-colors duration-300 font-medium`}
           >
             Serviços
-          </a>
-          <a 
-            href="#galeria" 
-            className="text-white hover:text-amber-500 transition-colors duration-300 font-medium"
+          </Link>
+          <Link 
+            to="/galeria" 
+            className={`${isActive('/galeria') ? 'text-amber-500' : 'text-white hover:text-amber-500'} transition-colors duration-300 font-medium`}
           >
             Galeria
-          </a>
-          <a 
-            href="#contato" 
-            className="text-white hover:text-amber-500 transition-colors duration-300 font-medium"
+          </Link>
+          <Link 
+            to="/contato" 
+            className={`${isActive('/contato') ? 'text-amber-500' : 'text-white hover:text-amber-500'} transition-colors duration-300 font-medium`}
           >
             Contato
-          </a>
+          </Link>
         </nav>
 
         <a 
@@ -123,34 +127,34 @@ const Header = () => {
         }`}
       >
         <div className="px-4 space-y-3">
-          <a 
-            href="#inicio" 
-            className="block px-4 py-3 text-white hover:bg-gray-800 rounded-md text-base font-medium transition-colors duration-200"
+          <Link 
+            to="/" 
+            className={`block px-4 py-3 ${isActive('/') ? 'bg-gray-800 text-amber-500' : 'text-white hover:bg-gray-800'} rounded-md text-base font-medium transition-colors duration-200`}
             onClick={closeMenu}
           >
             Início
-          </a>
-          <a 
-            href="#servicos" 
-            className="block px-4 py-3 text-white hover:bg-gray-800 rounded-md text-base font-medium transition-colors duration-200"
+          </Link>
+          <Link 
+            to="/servicos" 
+            className={`block px-4 py-3 ${isActive('/servicos') ? 'bg-gray-800 text-amber-500' : 'text-white hover:bg-gray-800'} rounded-md text-base font-medium transition-colors duration-200`}
             onClick={closeMenu}
           >
             Serviços
-          </a>
-          <a 
-            href="#galeria" 
-            className="block px-4 py-3 text-white hover:bg-gray-800 rounded-md text-base font-medium transition-colors duration-200"
+          </Link>
+          <Link 
+            to="/galeria" 
+            className={`block px-4 py-3 ${isActive('/galeria') ? 'bg-gray-800 text-amber-500' : 'text-white hover:bg-gray-800'} rounded-md text-base font-medium transition-colors duration-200`}
             onClick={closeMenu}
           >
             Galeria
-          </a>
-          <a 
-            href="#contato" 
-            className="block px-4 py-3 text-white hover:bg-gray-800 rounded-md text-base font-medium transition-colors duration-200"
+          </Link>
+          <Link 
+            to="/contato" 
+            className={`block px-4 py-3 ${isActive('/contato') ? 'bg-gray-800 text-amber-500' : 'text-white hover:bg-gray-800'} rounded-md text-base font-medium transition-colors duration-200`}
             onClick={closeMenu}
           >
             Contato
-          </a>
+          </Link>
           <a 
             href="https://wa.me/+554196003019" 
             target="_blank" 

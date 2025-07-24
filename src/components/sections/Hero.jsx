@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -104,24 +105,25 @@ const Hero = () => {
           className="flex flex-col sm:flex-row justify-center gap-4"
           variants={itemVariants}
         >
-          <motion.a 
-            href="#servicos" 
-            onClick={(e) => scrollToSection(e, '#servicos')}
+          <motion.div
             className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-transparent cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Nossos Serviços
-          </motion.a>
+            <Link to="/servicos" className="block w-full h-full">
+              Nossos Serviços
+            </Link>
+          </motion.div>
           
-          <motion.a 
-            href="#contato" 
+          <motion.div 
             className="bg-transparent hover:bg-white hover:bg-opacity-10 text-white font-bold py-3 px-8 border-2 border-white rounded-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Agendar Agora
-          </motion.a>
+            <Link to="/contato" className="block w-full h-full">
+              Agendar Agora
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
       
@@ -132,10 +134,10 @@ const Hero = () => {
         initial="hidden"
         animate="visible"
       >
-        <a 
-          href="#servicos" 
+        <Link 
+          to="/servicos" 
           className="text-white inline-block focus:outline-none"
-          aria-label="Rolar para a próxima seção"
+          aria-label="Ir para a seção de serviços"
         >
           <svg 
             className="w-10 h-10" 
@@ -151,7 +153,7 @@ const Hero = () => {
               d="M19 14l-7 7m0 0l-7-7m7 7V3" 
             />
           </svg>
-        </a>
+        </Link>
       </motion.div>
       
       {/* Overlay de carregamento suave */}
