@@ -3,6 +3,7 @@ import { FaSearchPlus, FaTimes, FaChevronLeft, FaChevronRight, FaArrowLeft, FaAr
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { galleryImages } from '../../config/galleryImages';
 
 // Componente personalizado para as setas de navegação
 const SampleNextArrow = ({ className, style, onClick }) => {
@@ -34,15 +35,7 @@ const SamplePrevArrow = ({ className, style, onClick }) => {
 };
 
 const Gallery = () => {
-  // Dados da galeria (substitua pelas suas próprias imagens)
-  const galleryImages = [
-    { id: 1, src: 'https://images.pexels.com/photos/2127733/pexels-photo-2127733.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Carro lavado e encerado', category: 'lavagem' },
-    { id: 2, src: 'https://images.pexels.com/photos/3802508/pexels-photo-3802508.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Detalhamento interno', category: 'detalhamento' },
-    { id: 3, src: 'https://images.pexels.com/photos/4481257/pexels-photo-4481257.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Polimento profissional', category: 'polimento' },
-    { id: 4, src: 'https://images.pexels.com/photos/4481323/pexels-photo-4481323.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Lavagem de motor', category: 'lavagem' },
-    { id: 5, src: 'https://images.pexels.com/photos/4481353/pexels-photo-4481353.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Limpeza de estofados', category: 'detalhamento' },
-    { id: 6, src: 'https://images.pexels.com/photos/4481326/pexels-photo-4481326.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Aplicação de cera', category: 'polimento' },
-  ];
+  // Usando as imagens do arquivo de configuração
 
   const categories = ['todos', ...new Set(galleryImages.map(image => image.category))];
   const [selectedCategory, setSelectedCategory] = useState('todos');

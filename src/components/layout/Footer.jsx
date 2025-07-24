@@ -89,7 +89,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 pt-8 text-center">
           <p>&copy; {currentYear} HL Car Detail. Todos os direitos reservados.</p>
-          <p className="text-sm text-gray-500 mt-2">Desenvolvido com ❤️ para amantes de carros</p>
+          <p className="text-sm text-gray-500 mt-2">Desenvolvido por Base Quatro</p>
         </div>
       </div>
     </footer>

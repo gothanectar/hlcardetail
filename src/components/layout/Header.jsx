@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,15 +45,18 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center py-4">
         <div className="flex items-center">
-          <img 
-            src="/logo.png" 
-            alt="HL Car Detail Logo" 
-            className="h-10 w-auto"
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = 'https://via.placeholder.com/150x40?text=HL+Car+Detail';
-            }}
-          />
+          <div className="h-12 flex items-center">
+            <img 
+              src="/CAR-hl-DETAIL.png" 
+              alt="HL Car Detail" 
+              className="h-full w-auto max-w-[200px] object-contain"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = '/logo-fallback.svg';
+                e.target.className = 'h-12 w-auto object-contain';
+              }}
+            />
+          </div>
         </div>
         
         <nav className="hidden md:flex space-x-8">
@@ -81,6 +85,16 @@ const Header = () => {
             Contato
           </a>
         </nav>
+
+        <a 
+          href="https://wa.me/554196003019?text=Olá! Gostaria de agendar um serviço de estética automotiva." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="hidden md:flex items-center bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"
+        >
+          <FaWhatsapp className="mr-2" />
+          Agendar Agora
+        </a>
 
         {/* Mobile menu button */}
         <button 

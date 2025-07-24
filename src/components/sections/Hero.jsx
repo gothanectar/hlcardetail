@@ -65,6 +65,14 @@ const Hero = () => {
     );
   }
 
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const element = document.querySelector(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <motion.section 
       id="inicio" 
@@ -98,7 +106,8 @@ const Hero = () => {
         >
           <motion.a 
             href="#servicos" 
-            className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-transparent"
+            onClick={(e) => scrollToSection(e, '#servicos')}
+            className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-transparent cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
